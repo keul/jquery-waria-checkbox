@@ -1,0 +1,55 @@
+<html>
+    <head>
+        <title>jQuery WAI-ARIA Checkbox Demo</title>
+        <!--script type="text/javascript" src="http://code.jquery.com/jquery-1.7.2.min.js"></script-->
+        <script type="text/javascript" src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+        <script type="text/javascript" src="jquery.waria-checkbox.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function(){
+                $('#test').click(function(e) {
+                    e.preventDefault();
+                    cb_total = $(':checkbox').length;
+                    cb_checked = $(':checked').length;
+                    alert('There are ' + cb_total + ' checkbox there. ' + cb_checked + ' are checked.')
+                })
+                $('div[role=checkbox]').click(function(){
+                   if ($(this).attr('aria-checked')==='true') {
+                       $(this).attr('aria-checked', 'false');
+                   } else {
+                       $(this).attr('aria-checked', 'true');                       
+                   }
+                });
+            });
+        </script>
+        <style type="text/css">
+            input[type=checkbox] + label {
+                background-color: blue;
+                color: white;
+            }
+            input[type=checkbox]:checked + label {
+                background-color: green;
+                color: white;
+            }
+            div[aria-checked=false] {
+                background-color: blue;
+                color: white;
+            }
+            div[aria-checked=true] {
+                background-color: green;
+                color: white;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="main">
+            <input type="checkbox" id="c1" />
+            <label for="c1">I'm a common checkbox</label> <br/> 
+            <input type="checkbox" id="c2" />
+            <label for="c2">I'm a common checkbox</label> <br/> 
+    		<div role="checkbox" aria-checked="false">I'm a WAI ARIA checkbox</div>
+            <div role="checkbox" aria-checked="false">I'm a WAI ARIA checkbox</div>
+            <div role="checkbox" aria-checked="false">I'm a WAI ARIA checkbox</div>
+        </div>
+        <input type="button" id="test" name="test" value="Run test" />
+    </body>
+</html>
