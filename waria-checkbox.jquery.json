@@ -1,0 +1,29 @@
+{
+  "name": "waria-checkbox",
+  "version": "0.1",
+  "title": "jQuery WAI ARIA Compatible Checkbox Plugin",
+  "author": {
+    "name": "Luca Fabbri",
+    "email": "luca@keul.it.com",
+    "url": ""
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "http://opensource.org/licenses/mit-license.php"
+    }
+  ],
+  "dependencies": {
+    "jquery": ">=1.7"
+  },
+  "description": "Query plugin for WAI ARIA checkbox elements, changing the way :checked and :checkbox selectors works",
+  "keywords": [
+    "checkbox",
+    "wai-aria"
+  ],
+  "homepage": "",
+  "demo": "http://htmlpreview.github.io/?https://github.com/keul/jquery-waria-checkbox/blob/master/demo.html",
+  "download": "",
+  "bugs": "https://github.com/keul/jquery-waria-checkbox/issues",
+  "maintainers": []
+}
