@@ -1,23 +1,28 @@
 <html>
     <head>
         <title>jQuery WAI-ARIA Checkbox Demo</title>
-        <!--script type="text/javascript" src="http://code.jquery.com/jquery-1.7.2.min.js"></script-->
         <script type="text/javascript" src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
         <script type="text/javascript" src="jquery.waria-checkbox.js"></script>
+        <script type="text/javascript" src="https://raw.github.com/nylen/shiftcheckbox/gh-pages/jquery.shiftcheckbox.js"></script>
         <script type="text/javascript">
             $(document).ready(function(){
-                $('#test').click(function(e) {
+                $('.testCheckbox').click(function(e) {
                     e.preventDefault();
-                    cb_total = $(':checkbox').length;
-                    cb_checked = $(':checked').length;
-                    alert('There are ' + cb_total + ' checkbox there. ' + cb_checked + ' are checked.')
+                    var cb_total = $(':checkbox', $(this).closest('.example')).length;
+                    var cb_checked = $(':checked', $(this).closest('.example')).length;
+                    alert('There are ' + cb_total + ' checkbox in that section. ' + cb_checked + ' are checked.')
                 })
+
                 $('div[role=checkbox]').click(function(){
                    if ($(this).attr('aria-checked')==='true') {
                        $(this).attr('aria-checked', 'false');
                    } else {
                        $(this).attr('aria-checked', 'true');                       
                    }
+                });
+                $('#example2 .field').shiftcheckbox({
+                    checkboxSelector: ':checkbox',
+                    selectAll: $('#all')
                 });
             });
         </script>
@@ -41,15 +46,81 @@
         </style>
     </head>
     <body>
-        <div id="main">
-            <input type="checkbox" id="c1" />
-            <label for="c1">I'm a common checkbox</label> <br/> 
-            <input type="checkbox" id="c2" />
-            <label for="c2">I'm a common checkbox</label> <br/> 
-    		<div role="checkbox" aria-checked="false">I'm a WAI ARIA checkbox</div>
-            <div role="checkbox" aria-checked="false">I'm a WAI ARIA checkbox</div>
-            <div role="checkbox" aria-checked="false">I'm a WAI ARIA checkbox</div>
+        <div class="example" id="example1">
+            <h1>Basic example</h1>
+            <p>Just testing how <code>:checked</code> and <code>:checkbox</code> works</p>
+            <div class="field">
+                <input type="checkbox" id="c11" />
+                <label for="c11">I'm a common checkbox</label>                
+            </div>
+            <div class="field">
+                <input type="checkbox" id="c12" />
+                <label for="c12">I'm a common checkbox</label>                 
+            </div>
+            <div class="field">
+                <input type="checkbox" id="c13" />
+                <label for="c13">I'm a common checkbox</label>                 
+            </div>
+            <div class="field">
+                <div role="checkbox" aria-checked="false" tabindex="0">I'm a WAI ARIA checkbox</div>                
+            </div>
+            <div class="field">
+                <div role="checkbox" aria-checked="false" tabindex="0">I'm a WAI ARIA checkbox</div>                
+            </div>
+            <div class="field">
+                <div role="checkbox" aria-checked="false" tabindex="0">I'm a WAI ARIA checkbox</div>                
+            </div>
+            <div class="field">
+                <input type="checkbox" id="c14" />
+                <label for="c14">I'm a common checkbox</label>                 
+            </div>
+            <div class="field">
+                <div role="checkbox" aria-checked="false" tabindex="0">I'm a WAI ARIA checkbox</div>                
+            </div>
+            <br/>
+            <input type="button" class="testCheckbox" name="test" value="Recap" />
         </div>
-        <input type="button" id="test" name="test" value="Run test" />
+
+        <div class="example" id="example2">
+            <h1>Shift+Click support</h1>
+            <p>
+                Deeply testing also the <code>.prop()</code> jQuery feature, using the
+                <a href="http://nylen.github.io/shiftcheckbox/">ShiftCheckbox jQuery plugin</a>.
+                <br/>
+                The plugin is unmodified but still is working properly also with HTML elements
+                (try to shift+click or the &quot;Select all&quot; button).
+            </p>
+            <div class="field">
+                <input type="checkbox" id="c21" />
+                <label for="c21">I'm a common checkbox</label>                
+            </div>
+            <div class="field">
+                <input type="checkbox" id="c22" />
+                <label for="c22">I'm a common checkbox</label>                 
+            </div>
+            <div class="field">
+                <input type="checkbox" id="c23" />
+                <label for="c23">I'm a common checkbox</label>                 
+            </div>
+            <div class="field">
+                <div role="checkbox" aria-checked="false" tabindex="0">I'm a WAI ARIA checkbox</div>                
+            </div>
+            <div class="field">
+                <div role="checkbox" aria-checked="false" tabindex="0">I'm a WAI ARIA checkbox</div>                
+            </div>
+            <div class="field">
+                <div role="checkbox" aria-checked="false" tabindex="0">I'm a WAI ARIA checkbox</div>                
+            </div>
+            <div class="field">
+                <input type="checkbox" id="c24" />
+                <label for="c24">I'm a common checkbox</label>                 
+            </div>
+            <div class="field">
+                <div role="checkbox" aria-checked="false" tabindex="0">I'm a WAI ARIA checkbox</div>                
+            </div>
+            <br/>
+            <input type="button" class="testCheckbox" name="test" value="Recap" />
+            <input type="button" id="all" name="all" value="Select all" />
+        </div>
     </body>
 </html>

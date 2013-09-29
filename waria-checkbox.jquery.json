@@ -1,6 +1,6 @@
 {
   "name": "waria-checkbox",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "title": "jQuery WAI ARIA Compatible Checkbox Plugin",
   "author": {
     "name": "Luca Fabbri",
@@ -16,7 +16,7 @@
   "dependencies": {
     "jquery": ">=1.7"
   },
-  "description": "Query plugin for WAI ARIA checkbox elements, changing the way :checked and :checkbox selectors works",
+  "description": "Query plugin for WAI ARIA compatible checkbox elements, hiding differences from default HTML checkbox",
   "keywords": [
     "checkbox",
     "wai-aria"

@@ -7,7 +7,8 @@ Introduction
 ------------
 
 The scope of this jQuery plugin is to hide the difference between canonical **checkbox** HTML elements
-and generic `WAI-ARIA versions`__, when using jQuery selectors like ``:checkbox`` and ``:checked``.
+and generic `WAI-ARIA versions`__, when using jQuery selectors like ``:checkbox`` and ``:checked`` or the
+``.prop()`` method of jQuery objects.
 
 __ http://www.w3.org/TR/wai-aria/roles#checkbox
 
@@ -57,3 +58,13 @@ Installing this jQuery plugin will change the way jQuery use those selectors. HT
 ``role="checkbox"`` are now part of the ``:checkbox`` selector, and the ``aria-checked`` is now analyzed when
 querying for ``:checked`` elements.
 
+Fixing ``.prop()`` usage
+------------------------
+
+jQuery methods like ``.prop()`` (and ``removeProp()`` also) used on real checkbox objects can be used to switch
+of the the ``checked`` state.
+This plugin will intercept those kind of call to WAI ARIA compatible checkbox, translating the call to the proper
+attribute change. So:
+
+* a call to ``.prop()`` will return the boolean check state
+* a call to ``.prop(checkState)`` will change the ``aria-checked`` attribute to true" or "false"
