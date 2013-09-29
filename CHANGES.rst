@@ -15,3 +15,4 @@ HISTORY
 ------------------
 
 * First release
+
