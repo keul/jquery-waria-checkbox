@@ -1,11 +1,11 @@
 {
   "name": "waria-checkbox",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "title": "jQuery WAI ARIA Compatible Checkbox Plugin",
   "author": {
     "name": "Luca Fabbri",
-    "email": "luca@keul.it.com",
-    "url": ""
+    "email": "luca@keul.it",
+    "url": "http://blog.keul.it/"
   },
   "licenses": [
     {
