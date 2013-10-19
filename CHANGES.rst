@@ -1,6 +1,18 @@
 HISTORY
 =======
 
+0.2.2 (2013-10-19)
+------------------
+
+* added package info for `bower`__ registration
+
+__ http://bower.io/
+
+0.2.1 (2013-10-05)
+------------------
+
+* documentation fixes
+
 0.2.0 (2013-09-29)
 ------------------
 

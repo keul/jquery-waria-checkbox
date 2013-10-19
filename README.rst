@@ -59,7 +59,7 @@ Installing this jQuery plugin will change the way jQuery use those selectors. HT
 querying for ``:checked`` elements.
 
 Fixing ``.prop()`` usage
-------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~
 
 jQuery methods like ``.prop()`` (and ``removeProp()`` also) used on real checkbox objects can be used to switch
 of the the ``checked`` state.
@@ -68,3 +68,13 @@ attribute change. So:
 
 * a call to ``.prop()`` will return the boolean check state
 * a call to ``.prop(checkState)`` will change the ``aria-checked`` attribute to true" or "false"
+
+Installation
+------------
+
+You can install this plugin by `manually downloading it`__, or use `bower`__::
+
+    bower install waria-checkbox
+
+__ https://raw.github.com/keul/jquery-waria-checkbox/master/jquery.waria-checkbox.js
+__ http://bower.io/
