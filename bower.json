@@ -1,0 +1,32 @@
+{
+  "name": "waria-checkbox",
+  "version": "0.2.1",
+  "homepage": "http://plugins.jquery.com/waria-checkbox/",
+  "description": "jQuery WAI ARIA Compatible Checkbox Plugin",
+  "main": "jquery.waria-checkbox.js",
+  "keywords": [
+    "wai-aria",
+    "accessibility",
+    "js"
+  ],
+  "authors": [
+    "Luca Fabbri <luca@keul.it>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests",
+    "CHANGES.rst",
+    "README.rst",
+    "demo.html",
+    "LICENCE.rst",
+    "README.rst",
+    "waria-checkbox.jquery.json"
+  ],
+  "dependencies": {
+    "jquery": ">=1.7"
+  }
+}
